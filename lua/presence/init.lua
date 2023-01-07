@@ -359,7 +359,7 @@ function Presence:get_discord_socket_path()
 
     if self.os.is_wsl then
         -- Use socket created by relay for WSL
-        sock_path = "/var/run/"..sock_name
+        sock_path = "/tmp/"..sock_name
     elseif self.os.name == "windows" then
         -- Use named pipe in NPFS for Windows
         sock_path = [[\\.\pipe\]]..sock_name
